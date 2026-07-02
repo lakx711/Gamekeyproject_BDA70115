@@ -3,7 +3,7 @@ from django.urls import include, path
 from rest_framework.routers import DefaultRouter
 
 from games.viewsets import GameViewSet, PublisherViewSet
-from games.views import register
+from games.views import register, create_order
 
 router = DefaultRouter()
 
@@ -14,4 +14,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
     path('api/register/', register),
+    path('api/orders/', create_order),
 ]
